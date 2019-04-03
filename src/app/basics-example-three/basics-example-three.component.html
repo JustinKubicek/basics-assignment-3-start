@@ -1,0 +1,14 @@
+<button
+class="btn btn-primary"
+(click)="onDisplayDetails()">Display Details</button>
+
+<p *ngIf="displayDetails">
+  Secret Password = tuna
+</p>
+<ul *ngIf="eventLog.length > 0">
+  <li *ngFor="let item of eventLog"
+  [ngStyle]="{backgroundColor: getColor(item)}"
+  [ngClass]="{itemThreshhold: isThresholdMet(item)}">Event {{ item }}</li>
+</ul>
+
+<!-- 5+ blue background and white text color -->
